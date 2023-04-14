@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">{{title}}</h1>
+
+
+            <h3 class="text-center">Login Form</h3>
+
+            <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+                <input type="text" placeholder="Enter username" name="user" formControlName="user">
+                <span style="color:red" *ngIf="user && user.invalid && user.touched">This field is not valid</span>
+                <br />
+                
+                <input type="password" placeholder="Enter password" name="password" formControlName="password"><br />
+                <span style="color:red" *ngIf="password && password.invalid && password.touched">This field is not valid</span>
+                <button [disabled]="loginForm.invalid">Login</button>
+            </form>
+
+        </div>
+    </div>
+</div>
